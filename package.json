@@ -1,8 +1,8 @@
 {
-  "name": "{{project_name}}-frontend",
+  "name": "simple_crm-frontend",
   "version": "0.0.1",
   "private": true,
-  "description": "{{project_name}} frontend.",
+  "description": "simple_crm frontend.",
   "main": "index.js",
   "prettier": "eslint-config-vinta/prettier",
   "scripts": {

@@ -38,8 +38,8 @@ This is a good starting point for modern Python/JavaScript web projects.
 In the next steps, always remember to replace theprojectname with your project's name
 - [ ] Above: don't forget the `--extension` and `--name` params!
 - [ ] Change the first line of README to the name of the project
-- [ ] Add an email address to the `ADMINS` settings variable in `{{project_name}}/backend/{{project_name}}/settings/base.py`
-- [ ] Change the `SERVER_EMAIL` to the email address used to send e-mails in `{{project_name}}/backend/{{project_name}}/settings/production.py`
+- [ ] Add an email address to the `ADMINS` settings variable in `simple_crm/backend/simple_crm/settings/base.py`
+- [ ] Change the `SERVER_EMAIL` to the email address used to send e-mails in `simple_crm/backend/simple_crm/settings/production.py`
 - [ ] Rename the folder `github` to `.github` with the command `mv github .github`
 
 After completing ALL of the above, remove this `Project bootstrap` section from the project README. Then follow `Running` below.
@@ -50,13 +50,13 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 
 ### Setup
 - Inside the `backend` folder, do the following:
-  - Create a copy of `{{project_name}}/settings/local.py.example`:  
-  `cp {{project_name}}/settings/local.py.example {{project_name}}/settings/local.py`
+  - Create a copy of `simple_crm/settings/local.py.example`:  
+  `cp simple_crm/settings/local.py.example simple_crm/settings/local.py`
   - Create a copy of `.env.example`:
   `cp .env.example .env`
 
 ### If you are using Docker:
-- Open the `/backend/.env` file on a text editor and uncomment the line `DATABASE_URL=postgres://{{project_name}}:password@db:5432/{{project_name}}`
+- Open the `/backend/.env` file on a text editor and uncomment the line `DATABASE_URL=postgres://simple_crm:password@db:5432/simple_crm`
 - Open a new command line window and go to the project's directory
 - Run the initial setup:
   `make docker_setup`
@@ -94,14 +94,14 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 #### Setup the backend app
 - Open the `/backend/.env` file on a text editor and do one of the following:
   - If you wish to use SQLite locally, uncomment the line `DATABASE_URL=sqlite:///backend/db.sqlite3`
-  - If you wish to use PostgreSQL locally, uncomment and edit the line `DATABASE_URL=postgres://{{project_name}}:password@db:5432/{{project_name}}` in order to make it correctly point to your database URL
+  - If you wish to use PostgreSQL locally, uncomment and edit the line `DATABASE_URL=postgres://simple_crm:password@db:5432/simple_crm` in order to make it correctly point to your database URL
     - The url format is the following: `postgres://USER:PASSWORD@HOST:PORT/NAME`
   - If you wish to use another database engine locally, add a new `DATABASE_URL` setting for the database you wish to use
     - Please refer to [dj-database-url](https://github.com/jacobian/dj-database-url#url-schema) on how to configure `DATABASE_URL` for commonly used engines
 - Open a new command line window and go to the project's directory
-- Create a new virtualenv with either [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) or only virtualenv: `mkvirtualenv {{project_name}}` or `python -m venv {{project_name}}-venv`
+- Create a new virtualenv with either [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) or only virtualenv: `mkvirtualenv simple_crm` or `python -m venv simple_crm-venv`
   > If you're using Python's virtualenv (the latter option), make sure to create the environment with the suggested name, otherwise it will be added to version control.
-- Make sure the virtualenv is activated `workon {{project_name}}` or `source {{project_name}}-venv/bin/activate`
+- Make sure the virtualenv is activated `workon simple_crm` or `source simple_crm-venv/bin/activate`
 - Run `make compile_install_requirements` to install the requirements
   > Please make sure you have already setup PostgreSQL on your environment before installing the requirements
 
@@ -119,7 +119,7 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 
 #### Setup Celery
 - Open a command line window and go to the project's directory
-- `workon {{project_name}}` or `source {{project_name}}-venv/bin/activate` depending on if you are using virtualenvwrapper or just virtualenv.
+- `workon simple_crm` or `source simple_crm-venv/bin/activate` depending on if you are using virtualenvwrapper or just virtualenv.
 - `python manage.py celery`
 
 #### Mailhog

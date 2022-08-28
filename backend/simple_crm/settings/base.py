@@ -54,7 +54,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "{{project_name}}.urls"
+ROOT_URLCONF = "simple_crm.urls"
 
 TEMPLATES = [
     {
@@ -82,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "{{project_name}}.wsgi.application"
+WSGI_APPLICATION = "simple_crm.wsgi.application"
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
